@@ -697,8 +697,10 @@ const rawRaces = {
 	],
 };
 
-const Races = Object.values(rawRaces).map((key) => {
-	return key[0];
-});
+const Races = Object.values(rawRaces)
+	.sort((a, b) => {
+		return new Date(b[0].startDate).getTime() - new Date(a[0].startDate).getTime();
+	})
+	.map((race) => race[0]);
 
 export default Races;
