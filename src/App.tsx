@@ -11,7 +11,7 @@ function App() {
 			<Background />
 			<div className='relative z-1'>
 				<Header />
-				<div className='z-30 mx-auto w-full px-6'>
+				<div className='z-30 mx-auto w-full px-4 md:px-6'>
 					{Races ? Races.map((race) => <RaceDetailsCard key={race.startDate} race={race} />) : null}
 				</div>
 			</div>
