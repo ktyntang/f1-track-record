@@ -1,0 +1,6 @@
+#run husky pre-commit hook
+  echo "Linting files..."
+  npx lint-staged
+
+
+

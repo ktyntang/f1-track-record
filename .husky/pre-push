@@ -1,0 +1,5 @@
+echo "Running tests..."
+npm run test
+
+echo "Building..."
+npm run build;
