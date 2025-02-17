@@ -22,6 +22,7 @@
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true,
 
+		/* Absolute imports */
 		"baseUrl": "./",
 		"paths": {
 			"src/*": ["./src/*"]
