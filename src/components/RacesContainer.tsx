@@ -13,6 +13,7 @@ const RacesContainer: FC = () => {
 
 	useEffect(() => {
 		const fetchRaces = async () => {
+			setIsLoaded(false);
 			setIsLoading(true);
 			let mostRecentlyCompletedRaces = [];
 			const scheduledRaces = await httpGetAllRacesForYear(selectedYear.toString());
@@ -37,7 +38,7 @@ const RacesContainer: FC = () => {
 	}, [selectedYear]);
 
 	return (
-		<div className='z-30 mx-auto w-full max-w-7xl px-4 md:px-6'>
+		<div className='z-30 mx-auto h-[90dvh] w-full max-w-7xl px-4 md:px-6'>
 			{/* TODO : Handle edge case of min and max f1 years */}
 			{/* TODO : Error display if no races completed yet for current year */}
 			<div className='m-2 flex w-fit flex-row gap-2 rounded-2xl bg-white p-2 shadow-md'>
@@ -50,9 +51,10 @@ const RacesContainer: FC = () => {
 			</div>
 
 			{/* TODO: Search bar */}
-
-			{isLoading && !hasError && <h3>Loading...</h3>}
-			{hasError && <h1>Something went wrong. Please try again later.</h1>}
+			<div className='mb-auto flex items-center justify-center'>
+				{isLoading && !hasError && <h3>Loading...</h3>}
+				{hasError && <h1>Something went wrong. Please try again later.</h1>}
+			</div>
 			{isLoaded && !hasError && !!races.length
 				? races.map((race) => <RaceDetailsCard key={race.startDate} race={race} />)
 				: null}
