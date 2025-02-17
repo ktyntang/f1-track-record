@@ -11,7 +11,8 @@
 		"lint:fix": "eslint --fix",
 		"format": "prettier --config .prettierrc --write .",
 		"preview": "vite preview",
-		"prepare": "husky"
+		"prepare": "husky",
+		"setup-env": "cp .env.example .env"
 	},
 	"lint-staged": {
 		"**/*": "npm run format",
