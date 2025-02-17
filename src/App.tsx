@@ -2,8 +2,7 @@ import "src/App.css";
 
 import Background from "src/components/Background";
 import Header from "src/components/Header";
-import RaceDetailsCard from "src/components/RaceDetailsCard";
-import Races from "src/models/exampleRaceDetails";
+import RacesContainer from "src/components/RacesContainer";
 
 function App() {
 	return (
@@ -11,9 +10,7 @@ function App() {
 			<Background />
 			<div className='relative z-1'>
 				<Header />
-				<div className='z-30 mx-auto w-full px-4 md:px-6'>
-					{Races ? Races.map((race) => <RaceDetailsCard key={race.startDate} race={race} />) : null}
-				</div>
+				<RacesContainer />
 			</div>
 		</>
 	);
